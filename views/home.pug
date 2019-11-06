@@ -1,0 +1,149 @@
+html
+    head
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+        link(href='css/bootstrap.min.css', rel='stylesheet')
+        link(href='css/style.css', rel='stylesheet')
+    body
+        header
+            .container-fluid.container-fluid.col-sm-12.nav-bar
+                .col-sm-6
+                    h1(style='margin-left: 25px;')
+                        b Website Name
+                div
+                    button.logout-btn.btn.btn-lg(onclick="window.location.href='/'")
+                        b
+                            i.fa.fa-sign-out(aria-hidden='true')
+                            |  Logout
+        .col-sm-12.container-fluid(style='height: 80px;')
+        .col-sm-12.container-fluid(style='height: 577px; background-color: #303030;')
+            .col-sm-2(style='background-color: #202020;height:577px;')
+                button.sidebar-btn.btn.btn-block(onclick="window.location.href='/home'")
+                    b
+                        i.fa.fa-home(aria-hidden='true')
+                        |  Home
+                button.sidebar-btn.btn.btn-block(onclick="window.location.href='/racing'")
+                    b
+                        i.fa.fa-car(aria-hidden='true')
+                        |  Racing
+                button.sidebar-btn.btn.btn-block(onclick="window.location.href='/action'")
+                    b
+                        i.fa.fa-bolt(aria-hidden='true')
+                        |  Action
+                button.sidebar-btn.btn.btn-block(onclick="window.location.href='/openworld'")
+                    b
+                        i.fa.fa-globe(aria-hidden='true')
+                        |  Open World
+                button.sidebar-btn.btn.btn-block(onclick="window.location.href='/sports'")
+                    b
+                        i.fa.fa-futbol-o(aria-hidden='true')
+                        |  Sports
+                button.sidebar-btn.btn.btn-block(onclick="window.location.href='/cart'")
+                    b
+                        i.fa.fa-shopping-cart(aria-hidden='true')
+                        |  Cart
+                button.sidebar-btn.btn.btn-block(onclick="window.location.href='/about'")
+                    b
+                        i.fa.fa-users(aria-hidden='true')
+                        |  About
+            .col-sm-10(style='background-color: #303030;height:577px;overflow-y: scroll;')
+                .col-sm-12.image-collage-header
+                    h3
+                        b Trending
+                .col-sm-12.image-collage
+                    .col-sm-7(style="height:360px;margin-top: 20px;background: url('images/collage_1.jpg') no-repeat center center ; background-size: cover;border:1px solid #404040;")
+                    .col-sm-5(style='height:360px;')
+                        .col-sm-12(style="height:180px;margin-top: 20px;background: url('images/collage_2.jpg') no-repeat center center ; background-size: cover;border:1px solid #404040;")
+                        .col-sm-12(style="height:180px;background: url('images/collage_3.jpg') no-repeat center center ; background-size: cover;border:1px solid #404040;")
+                .col-sm-12.container-fluid.image-collage-header
+                    .col-sm-6
+                        h3(style='margin-left: 20px;')
+                            b Racing
+                    .col-sm-6
+                        button.more-btn.btn.btn-primary(onclick="window.location.href='/racing'")
+                            b +
+                .col-sm-12.content-outer
+                    each product,i in products_1
+                        if product.category=="racing"
+                            .col-sm-4.content-inner
+                                .col-sm-12.content-image
+                                    img.myimg.image(src='/images/' + product.image )
+                                .col-sm-12
+                                    h3(style='color: #D00000;overflow: hidden;')=product.name
+                                    h3(style='color: #D00000;')='₹ '+product.price
+
+                                
+                b
+                    b
+                        b
+                            .col-sm-12.container-fluid.image-collage-header
+                                .col-sm-6
+                                    h3(style='margin-left: 20px;')
+                                        b Action
+                                .col-sm-6
+                                    button.more-btn.btn.btn-primary(onclick="window.location.href='/action'")
+                                        b +
+                            .col-sm-12.content-outer
+                                each product,i in products_1
+                                    if product.category=="action"
+                                        .col-sm-4.content-inner
+                                            .col-sm-12.content-image
+                                                img.myimg.image(src='/images/' + product.image )
+                                            .col-sm-12
+                                                h3(style='color: #D00000;overflow: hidden;')=product.name
+                                                h3(style='color: #D00000;')='₹ '+product.price
+                                                b
+                                                    b
+                            b
+                                b
+                                    b
+                                        .col-sm-12.container-fluid.image-collage-header
+                                            .col-sm-6
+                                                h3(style='margin-left: 20px;')
+                                                    b Open World
+                                            .col-sm-6
+                                                button.more-btn.btn.btn-primary(onclick="window.location.href='/openworld'")
+                                                    b +
+                                        .col-sm-12.content-outer
+                                            each product,i in products_1
+                                                if product.category=="openworld"
+                                                    .col-sm-4.content-inner
+                                                        .col-sm-12.content-image
+                                                            img.myimg.image(src='/images/' + product.image )
+                                                        .col-sm-12
+                                                            h3(style='color: #D00000;overflow: hidden;')=product.name
+                                                            h3(style='color: #D00000;')='₹ '+product.price
+                                                                        b
+                                                                            b
+                                        b
+                                            b
+                                                b
+                                                    .col-sm-12.container-fluid.image-collage-header
+                                                        .col-sm-6
+                                                            h3(style='margin-left: 20px;')
+                                                                b Sports
+                                                        .col-sm-6
+                                                            button.more-btn.btn.btn-primary(onclick="window.location.href='/sports'")
+                                                                b +
+                                                    .col-sm-12.content-outer
+                                                        each product,i in products_1
+                                                            if product.category=="sports"
+                                                                .col-sm-4.content-inner
+                                                                    .col-sm-12.content-image
+                                                                        img.myimg.image(src='/images/' + product.image )
+                                                                    .col-sm-12
+                                                                        h3(style='color: #D00000;overflow: hidden;')=product.name
+                                                                        h3(style='color: #D00000;')='₹ '+product.price
+                                                        b
+                                                            b
+                                                                b
+                                                    b
+                                                        b
+                                                            b
+            b
+                b
+                    b
+        b
+            b
+                b
+                    .col-sm-12.container-fluid.the-footer

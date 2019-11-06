@@ -1,0 +1,83 @@
+html
+    head
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+        link(href='css/bootstrap.min.css', rel='stylesheet')
+        link(href='css/style.css', rel='stylesheet')
+    body
+        header
+            .container-fluid.container-fluid.col-sm-12.nav-bar
+                .col-sm-6
+                    h1(style='margin-left: 25px;')
+                        b Website Name
+                div
+                    button.logout-btn.btn.btn-lg(onclick="window.location.href='/register'")
+                        b
+                            i.fa.fa-users(aria-hidden='true')
+                            |  Register
+                    button.logout-btn.btn.btn-lg(onclick="window.location.href='/'")
+                        b
+                            i.fa.fa-sign-in(aria-hidden='true')
+                            |  Login
+        .col-sm-12(style='height: 100px;')
+        .col-sm-9.col-sm-offset-2(style='height: 500px;')
+            .col-sm-10.login-header(style='height: 80px')
+                h1
+                    b
+                        i.fa.fa-users(aria-hidden='true')
+                        |  Register
+                        b
+                b
+                    b
+            b
+                b
+                    .col-sm-10.login-body(style='height: 600px')
+                        form.form-horizontal.myform(method='POST', style='margin-top:60px;', action='/adduser')
+                            .form-group(style='padding-top: 30px;')
+                                .col-sm-3(style='background-color: #D00000;border:1px solid #D00000;color:#222;border-radius: 4px ;margin-left: 45px;')
+                                    h4 Enter Name
+                                .col-sm-7
+                                    input.form-control(type='text', name='fname')
+                            .form-group(style='padding-top: 30px;')
+                                .col-sm-3(style='background-color: #D00000;border:1px solid #D00000;color:#222;border-radius: 4px ;margin-left: 45px;')
+                                    h4 Enter Last Name
+                                .col-sm-7
+                                    input.form-control(type='text', name='lname')
+                            .form-group(style='padding-top: 30px;')
+                                .col-sm-3(style='background-color: #D00000;border:1px solid #D00000;color:#222;border-radius: 4px ;margin-left: 45px;')
+                                    h4 Enter Email
+                                .col-sm-7
+                                    input.form-control(type='text', name='email')
+                            .form-group(style='margin-top: 20px;')
+                                .col-sm-3(style='background-color: #D00000;border:1px solid #D00000;color:#222;border-radius: 4px ;margin-left: 45px;')
+                                    h4 Enter password
+                                .col-sm-7
+                                    input#pass.form-control(type='password', name='password')
+                            .form-group(style='margin-top: 20px;')
+                                .col-sm-3(style='background-color: #D00000;border:1px solid #D00000;color:#222;border-radius: 4px ;margin-left: 45px;')
+                                    h4 Confirm Password
+                                .col-sm-7
+                                    input#repass.form-control(type='password')
+                            .form-group(style='margin-top: 20px;')
+                                .col-sm-3(style='margin-left: 300px;')
+                                    button.btn-lg.btn-block.go(name='submit', onclick='func1();', style='background-color: #D00000;border:1px solid #D00000;color:#222;')
+                                        i.fa.fa-users(style='font-size: 24px;', aria-hidden='true')
+                                        |   Register
+                            h1(style='color: #D00000;font-size: 45px;margin-left: 288px;')
+                                i.fa.fa-facebook-official(aria-hidden='true')
+                                i.fa.fa-instagram(aria-hidden='true')
+                                i.fa.fa-twitter-square(aria-hidden='true')
+                                i.fa.fa-linkedin-square(aria-hidden='true')
+        b
+            b
+                script.
+                    function func1()
+                    {
+                    var a=document.getElementById("pass").value;
+                    var b=document.getElementById("repass").value;
+                    if(a!=b)
+                    {
+                    alert("Password Mismatch");
+                    }
+                    }
+                // mcmaster

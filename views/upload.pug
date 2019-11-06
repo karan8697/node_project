@@ -1,0 +1,53 @@
+html
+    head
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+        link(href='css/bootstrap.min.css', rel='stylesheet')
+        link(href='css/style.css', rel='stylesheet')
+    body(style='background-color: #303030;overflow-x:hidden;')
+        header
+            .container-fluid.container-fluid.col-sm-12.nav-bar
+                .col-sm-6
+                    h1(style='margin-left: 25px;')
+                        b Website Name
+                div
+                    button.logout-btn.btn.btn-lg(onclick="window.location.href='/'")
+                        b
+                            i.fa.fa-sign-out(aria-hidden='true')
+                            |  Logout
+        form.form-horizontal.col-sm-9.col-sm-offset-2(method='POST', action='/upload',style="margin-top:200px;")
+            .form-group
+                .col-sm-3(style='background-color: #D00000;border:1px solid #D00000;color:#222;border-radius: 4px ;margin-left: 25px')
+                    h4 Enter Product Name
+                .col-sm-7
+                    input.form-control(type='text', name='name')
+            .form-group
+                .col-sm-3(style='background-color: #D00000;border:1px solid #D00000;color:#222;border-radius: 4px ;margin-left: 25px')
+                    h4 Enter Publisher
+                .col-sm-7
+                    input.form-control(type='text', name='publisher')
+            .form-group
+                .col-sm-3(style='background-color: #D00000;border:1px solid #D00000;color:#222;border-radius: 4px ;margin-left: 25px')
+                    h4 Enter Price
+                .col-sm-7
+                    input.form-control(type='text', name='price')
+            .form-group
+                .col-sm-3(style='background-color: #D00000;border:1px solid #D00000;color:#222;border-radius: 4px ;margin-left: 25px')
+                    h4 Enter Product Description
+                .col-sm-7
+                    textarea.form-control.txtarea(name='desc')
+            .form-group
+                .col-sm-3(style='background-color: #D00000;border:1px solid #D00000;color:#222;border-radius: 4px ;margin-left: 25px')
+                    h4 Select Product Category
+                .col-sm-7
+                    select.form-control(name='category')
+                        option racing
+                        option action
+                        option openworld
+                        option sports
+            .form-group
+                .col-sm-3(style='background-color:#D00000 ;border:1px solid #D00000;color:#222;border-radius: 4px ;margin-left: 25px')
+                    h4 Upload Picture
+                .col-sm-7
+                    input.form-control(type='file', name='image')
+            button.btn.btn-info.btn-lg(type='submit', style='background-color: #D00000;  border:2px solid #D00000; color:#202020;margin-left: 125px; ', name='submit') Upload

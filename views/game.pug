@@ -1,0 +1,67 @@
+html
+    head
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+        link(href='css/bootstrap.min.css', rel='stylesheet')
+        link(href='css/style.css', rel='stylesheet')
+    body
+        header
+            .container-fluid.container-fluid.col-sm-12.nav-bar
+                .col-sm-6
+                    h1(style='margin-left: 25px;')
+                        b Website Name
+                div
+                    button.logout-btn.btn.btn-lg(onclick="window.location.href='/'")
+                        b
+                            i.fa.fa-sign-out(aria-hidden='true')
+                            |  Logout
+        .col-sm-12.container-fluid(style='height: 80px;')
+        .col-sm-12.container-fluid(style='height: 577px; background-color: #303030;')
+            .col-sm-2(style='background-color: #202020;height:577px;')
+                button.sidebar-btn.btn.btn-block(onclick="window.location.href='/home'")
+                    b
+                        i.fa.fa-home(aria-hidden='true')
+                        |  Home
+                button.sidebar-btn.btn.btn-block(href='/racing')
+                    b
+                        i.fa.fa-car(aria-hidden='true')
+                        |  Racing
+                button.sidebar-btn.btn.btn-block(onclick="window.location.href='/action'")
+                    b
+                        i.fa.fa-bolt(aria-hidden='true')
+                        |  Action
+                button.sidebar-btn.btn.btn-block(onclick="window.location.href='/openworld'")
+                    b
+                        i.fa.fa-globe(aria-hidden='true')
+                        |  Open World
+                button.sidebar-btn.btn.btn-block(onclick="window.location.href='/sports'")
+                    b
+                        i.fa.fa-futbol-o(aria-hidden='true')
+                        |  Sports
+                button.sidebar-btn.btn.btn-block(onclick="window.location.href='/cart'")
+                    b
+                        i.fa.fa-shopping-cart(aria-hidden='true')
+                        |  Cart
+                button.sidebar-btn.btn.btn-block(onclick="window.location.href='/about'")
+                    b
+                        i.fa.fa-users(aria-hidden='true')
+                        |  About
+            .col-sm-10(style=";height:577px;background: url('images/collage_1.jpg') no-repeat center center ; background-size: cover;")
+                .col-sm-12.game-overlay
+                    .col-sm-12(style='height:60px;opacity:1;')
+                        h1= products.name
+                    .col-sm-12(style='height:500px;margin-top: 15px;')
+                        .col-sm-6(style='height:500px;')
+                            .col-sm-12(style='height:300px;')
+                                img(src='/images/' + products.image, style='border-radius:4px;')
+                            .col-sm-12(style='height: 15px;')
+                            h3(style='margin-left: 15px;')=' Game Publisher:'+products.publisher
+                            h3(style='margin-left: 15px;')= 'Price: ₹'+ products.price
+                            .col-sm-6.col-sm-offset-1
+                                button.btn.btn-block.cart-btn(onclick="window.location.href='/addcart'", style='border-radius: 4px;height:40px;font-size: 24px;')
+                                    i.fa.fa-shopping-cart(aria-hidden='true')
+                        .col-sm-6(style='height:500px;')
+                            h3 Description
+                            h5(style='margin-right: 20px;margin-left: 20px;overflow-wrap: break-word;')= products.desc
+                                | 
+        .col-sm-12.container-fluid.the-footer
